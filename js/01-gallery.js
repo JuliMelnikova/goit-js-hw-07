@@ -29,16 +29,16 @@ galleryEl.addEventListener('click', (event) => {
     
     {
         onShow: (instance) => {
-            document.addEventListener("keydown", escape);
+            document.addEventListener("keydown", onCloseModal);
         },
         onClose: (instance) => {
-            document.removeEventListener("keydown", escape);
+            document.removeEventListener("keydown", onCloseModal);
         },
         }
     );
     instance.show();
 
-    function escape(e) {
+    function onCloseModal(e) {
         console.log('ESCAPE', e);
         if (e.code === 'Escape') {
         instance.close();
